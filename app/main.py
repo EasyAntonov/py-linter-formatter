@@ -26,6 +26,6 @@ def format_linter_report(linter_report: dict) -> list:
             "path": linter,
             "status": "passed"
         } if len(linter) == 0 else
-            format_single_linter_file(key, value) for key, value in linter_report.items()
+            format_single_linter_file(linter, linter_report[linter])
         for linter in linter_report
     ]
